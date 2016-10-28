@@ -12,9 +12,10 @@ import CoreLocation
 import Foundation
 
 class SecondViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-   
+    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet var tapOutlet: UITapGestureRecognizer!
+
     
     
     var longitude: CLLocationDegrees = 0
@@ -38,7 +39,7 @@ class SecondViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         
     }
     
-    var currentLocation: CLLocationCoordinate2D
+    
     
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation: CLLocation = locations [0]
@@ -49,22 +50,20 @@ class SecondViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: longDelta)
         let theLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let theRegion = MKCoordinateRegion(center: theLocation, span:span)
-        currentLatitude = Double(latitude)
-        currentLongitude = Double(longitude)
+        currentLocation = theLocation
         
         self.mapView.setRegion(theRegion, animated: true)
-//        latitude = theLocation.latitude
-//        longitude = theLocation.longitude
+        //        latitude = theLocation.latitude
+        //        longitude = theLocation.longitude
     }
     
-    
+    var currentLocation: CLLocationCoordinate2D?
     
     @IBAction func tapAction(_ sender: AnyObject) {
         
-        
-        let currentLocation = CLLocationCoordinate2D(latitude: currentLongitude, longitude: currentLatitude)
         let annotation = MKPointAnnotation()
-        annotation.coordinate = theLocation
+        guard let current = currentLocation else { return }
+        annotation.coordinate = current
         mapView.addAnnotation(annotation)
         
     }
@@ -75,7 +74,7 @@ class SecondViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
