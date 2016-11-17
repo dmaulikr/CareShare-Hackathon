@@ -33,8 +33,17 @@ class SecondViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         mapView.delegate = self
         mapView.showsUserLocation = true
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SecondViewController.dismissKeyboard))
+       view.addGestureRecognizer(tap)
+       
+   
     }
-    
+
+  func dismissKeyboard() {
+       //Causes the view (or one of its embedded text fields) to resign the first responder status.
+       view.endEditing(true)
+   }
+
     override func viewDidAppear(_ animated: Bool) {
         
     }
@@ -53,8 +62,6 @@ class SecondViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         currentLocation = theLocation
         
         self.mapView.setRegion(theRegion, animated: true)
-        //        latitude = theLocation.latitude
-        //        longitude = theLocation.longitude
     }
     
     var currentLocation: CLLocationCoordinate2D?

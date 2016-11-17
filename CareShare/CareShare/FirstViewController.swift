@@ -11,10 +11,12 @@ import MapKit
 import CoreLocation
 import Foundation
 
-class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINavigationControllerDelegate {
+class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-
+    @IBOutlet weak var myTableView: UITableView!
+    
+    
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -33,28 +35,17 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         self.mapView.showsUserLocation = true
         
         addPerson()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SecondViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
         
     }
     
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-//        let homelessData = HomelessData.people
-//        
-//        let location = CLLocationCoordinate2D(latitude: 34.0129592, longitude: -118.49519559999999)
-//        
-//        let span = MKCoordinateSpanMake(0.002, 0.002)
-//        
-//        let region = MKCoordinateRegion(center: location, span: span)
-//        
-//        mapView.setRegion(region, animated: true)
-//        
-//        let annotation = MKPointAnnotation()
-//        
-//        annotation.coordinate = location
-//        
-//        mapView.addAnnotation(annotation)
-        
-//        locationManager.stopUpdatingLocation()
         
     }
     
@@ -90,14 +81,28 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         
         
     }
+
     
-    // Append Homeless people data
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     
-    
-    
-    
-    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return HomelessData.people.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! homelessTableViewCell
+        
+        let data = HomelessData.people[indexPath.row]
+        
+        cell.name.text = data.name
+        cell.location.text = data.location
+        
+        
+        return cell
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -10,6 +10,7 @@
 		0A1B8FE11DC40D22000ED4A3 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1B8FDE1DC40D22000ED4A3 /* logo.png */; };
 		0A1B8FE21DC40D22000ED4A3 /* banner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A1B8FDF1DC40D22000ED4A3 /* banner.jpg */; };
 		0A1B8FE31DC40D22000ED4A3 /* Help Icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A1B8FE01DC40D22000ED4A3 /* Help Icon.jpg */; };
+		0A702A331DDD2E0D00F5CDA2 /* homelessDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A702A321DDD2E0D00F5CDA2 /* homelessDataTableViewCell.swift */; };
 		0A7770E91DC3DD7500397657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7770E81DC3DD7500397657 /* AppDelegate.swift */; };
 		0A7770EB1DC3DD7500397657 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7770EA1DC3DD7500397657 /* FirstViewController.swift */; };
 		0A7770ED1DC3DD7500397657 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7770EC1DC3DD7500397657 /* SecondViewController.swift */; };
@@ -23,6 +24,7 @@
 		0A1B8FDE1DC40D22000ED4A3 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../logo.png; sourceTree = "<group>"; };
 		0A1B8FDF1DC40D22000ED4A3 /* banner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = banner.jpg; path = ../banner.jpg; sourceTree = "<group>"; };
 		0A1B8FE01DC40D22000ED4A3 /* Help Icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Help Icon.jpg"; path = "../Help Icon.jpg"; sourceTree = "<group>"; };
+		0A702A321DDD2E0D00F5CDA2 /* homelessDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homelessDataTableViewCell.swift; sourceTree = "<group>"; };
 		0A7770E51DC3DD7500397657 /* CareShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A7770E81DC3DD7500397657 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A7770EA1DC3DD7500397657 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				0A7770EC1DC3DD7500397657 /* SecondViewController.swift */,
 				0A7770EE1DC3DD7500397657 /* Main.storyboard */,
 				0A7770FC1DC3E55200397657 /* HomelessData.swift */,
+				0A702A321DDD2E0D00F5CDA2 /* homelessDataTableViewCell.swift */,
 				0A7770F11DC3DD7500397657 /* Assets.xcassets */,
 				0A7770F31DC3DD7500397657 /* LaunchScreen.storyboard */,
 				0A7770F61DC3DD7500397657 /* Info.plist */,
@@ -157,6 +160,7 @@
 			files = (
 				0A7770ED1DC3DD7500397657 /* SecondViewController.swift in Sources */,
 				0A7770E91DC3DD7500397657 /* AppDelegate.swift in Sources */,
+				0A702A331DDD2E0D00F5CDA2 /* homelessDataTableViewCell.swift in Sources */,
 				0A7770EB1DC3DD7500397657 /* FirstViewController.swift in Sources */,
 				0A7770FD1DC3E55200397657 /* HomelessData.swift in Sources */,
 			);
